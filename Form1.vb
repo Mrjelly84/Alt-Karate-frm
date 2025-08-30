@@ -1,7 +1,14 @@
 ﻿Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'KarateDBDataSet.Members' table. You can move, or remove it, as needed.
-        Me.MembersTableAdapter.Fill(Me.KarateDBDataSet.Members)
+        MembersTableAdapter.Fill(KarateDBDataSet.Members)
 
+    End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) 
+        Try
+            KarateMembersBindingSource.Filter = txtFilter.Text
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 End Class
