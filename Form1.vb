@@ -11,4 +11,20 @@
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+    Private Sub btnFilterByDate_Click(sender As Object, e As EventArgs) Handles btnFilterByDate.Click
+        frmFilterByDates.ShowDialog()
+    End Sub
+
+    Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem4.Click
+        Add_Member.ShowDialog()
+    End Sub
+
+    Private Sub FindMemberByNameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FindMemberByNameToolStripMenuItem.Click
+        FindByName.ShowDialog()
+    End Sub
+
+    Private Sub ToolStripMenuItem7_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem7.Click
+        Close()
+    End Sub
 End Class

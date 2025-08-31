@@ -43,9 +43,10 @@ Partial Class Form1
         Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.btnFilterByDate = New System.Windows.Forms.Button()
-        Me.btnGo = New System.Windows.Forms.ToolStripButton()
         Me.txtFilter = New System.Windows.Forms.ToolStripTextBox()
+        Me.btnGo = New System.Windows.Forms.ToolStripButton()
+        Me.btnFilterByDate = New System.Windows.Forms.Button()
+        Me.FindMemberByNameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KarateMembersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KarateDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,7 +146,7 @@ Partial Class Form1
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem4, Me.ToolStripMenuItem5, Me.ToolStripMenuItem6, Me.ToolStripMenuItem7})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem4, Me.FindMemberByNameToolStripMenuItem, Me.ToolStripMenuItem5, Me.ToolStripMenuItem6, Me.ToolStripMenuItem7})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "&File"
@@ -153,25 +154,25 @@ Partial Class Form1
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(196, 22)
         Me.ToolStripMenuItem4.Text = "&Add Member"
         '
         'ToolStripMenuItem5
         '
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem5.Text = "&Find Member"
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(196, 22)
+        Me.ToolStripMenuItem5.Text = "&Find Member by Date"
         '
         'ToolStripMenuItem6
         '
         Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(196, 22)
         Me.ToolStripMenuItem6.Text = "&Update Database"
         '
         'ToolStripMenuItem7
         '
         Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
-        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(196, 22)
         Me.ToolStripMenuItem7.Text = "&Close"
         '
         'ToolStrip1
@@ -186,14 +187,12 @@ Partial Class Form1
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'btnFilterByDate
+        'txtFilter
         '
-        Me.btnFilterByDate.Location = New System.Drawing.Point(460, 27)
-        Me.btnFilterByDate.Name = "btnFilterByDate"
-        Me.btnFilterByDate.Size = New System.Drawing.Size(75, 23)
-        Me.btnFilterByDate.TabIndex = 4
-        Me.btnFilterByDate.Text = "FilterByDate"
-        Me.btnFilterByDate.UseVisualStyleBackColor = True
+        Me.txtFilter.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtFilter.Name = "txtFilter"
+        Me.txtFilter.Size = New System.Drawing.Size(200, 25)
+        Me.txtFilter.Text = "(enter a filter string)"
         '
         'btnGo
         '
@@ -204,12 +203,20 @@ Partial Class Form1
         Me.btnGo.Size = New System.Drawing.Size(26, 22)
         Me.btnGo.Text = "&Go"
         '
-        'txtFilter
+        'btnFilterByDate
         '
-        Me.txtFilter.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtFilter.Name = "txtFilter"
-        Me.txtFilter.Size = New System.Drawing.Size(200, 25)
-        Me.txtFilter.Text = "(enter a filter string)"
+        Me.btnFilterByDate.Location = New System.Drawing.Point(460, 27)
+        Me.btnFilterByDate.Name = "btnFilterByDate"
+        Me.btnFilterByDate.Size = New System.Drawing.Size(75, 23)
+        Me.btnFilterByDate.TabIndex = 4
+        Me.btnFilterByDate.Text = "FilterByDate"
+        Me.btnFilterByDate.UseVisualStyleBackColor = True
+        '
+        'FindMemberByNameToolStripMenuItem
+        '
+        Me.FindMemberByNameToolStripMenuItem.Name = "FindMemberByNameToolStripMenuItem"
+        Me.FindMemberByNameToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
+        Me.FindMemberByNameToolStripMenuItem.Text = "&Find Member By Name"
         '
         'Form1
         '
@@ -256,4 +263,5 @@ Partial Class Form1
     Friend WithEvents btnFilterByDate As Button
     Friend WithEvents txtFilter As ToolStripTextBox
     Friend WithEvents btnGo As ToolStripButton
+    Friend WithEvents FindMemberByNameToolStripMenuItem As ToolStripMenuItem
 End Class
