@@ -39,6 +39,7 @@ Partial Class Form1
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FindMemberByNameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
@@ -46,7 +47,9 @@ Partial Class Form1
         Me.txtFilter = New System.Windows.Forms.ToolStripTextBox()
         Me.btnGo = New System.Windows.Forms.ToolStripButton()
         Me.btnFilterByDate = New System.Windows.Forms.Button()
-        Me.FindMemberByNameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FirstNameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PhoneToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DateJoinedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KarateMembersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KarateDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -157,6 +160,12 @@ Partial Class Form1
         Me.ToolStripMenuItem4.Size = New System.Drawing.Size(196, 22)
         Me.ToolStripMenuItem4.Text = "&Add Member"
         '
+        'FindMemberByNameToolStripMenuItem
+        '
+        Me.FindMemberByNameToolStripMenuItem.Name = "FindMemberByNameToolStripMenuItem"
+        Me.FindMemberByNameToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
+        Me.FindMemberByNameToolStripMenuItem.Text = "&Find Member By Name"
+        '
         'ToolStripMenuItem5
         '
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
@@ -165,6 +174,7 @@ Partial Class Form1
         '
         'ToolStripMenuItem6
         '
+        Me.ToolStripMenuItem6.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FirstNameToolStripMenuItem})
         Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
         Me.ToolStripMenuItem6.Size = New System.Drawing.Size(196, 22)
         Me.ToolStripMenuItem6.Text = "&Update Database"
@@ -212,11 +222,25 @@ Partial Class Form1
         Me.btnFilterByDate.Text = "FilterByDate"
         Me.btnFilterByDate.UseVisualStyleBackColor = True
         '
-        'FindMemberByNameToolStripMenuItem
+        'FirstNameToolStripMenuItem
         '
-        Me.FindMemberByNameToolStripMenuItem.Name = "FindMemberByNameToolStripMenuItem"
-        Me.FindMemberByNameToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
-        Me.FindMemberByNameToolStripMenuItem.Text = "&Find Member By Name"
+        Me.FirstNameToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PhoneToolStripMenuItem})
+        Me.FirstNameToolStripMenuItem.Name = "FirstNameToolStripMenuItem"
+        Me.FirstNameToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FirstNameToolStripMenuItem.Text = "First_Name"
+        '
+        'PhoneToolStripMenuItem
+        '
+        Me.PhoneToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateJoinedToolStripMenuItem})
+        Me.PhoneToolStripMenuItem.Name = "PhoneToolStripMenuItem"
+        Me.PhoneToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PhoneToolStripMenuItem.Text = "Phone"
+        '
+        'DateJoinedToolStripMenuItem
+        '
+        Me.DateJoinedToolStripMenuItem.Name = "DateJoinedToolStripMenuItem"
+        Me.DateJoinedToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DateJoinedToolStripMenuItem.Text = "Date_Joined"
         '
         'Form1
         '
@@ -264,4 +288,7 @@ Partial Class Form1
     Friend WithEvents txtFilter As ToolStripTextBox
     Friend WithEvents btnGo As ToolStripButton
     Friend WithEvents FindMemberByNameToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FirstNameToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PhoneToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DateJoinedToolStripMenuItem As ToolStripMenuItem
 End Class
