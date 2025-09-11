@@ -41,15 +41,15 @@ Partial Class Form1
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FindMemberByNameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UpdateDatabaseToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FirstNameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PhoneToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DateJoinedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.txtFilter = New System.Windows.Forms.ToolStripTextBox()
         Me.btnGo = New System.Windows.Forms.ToolStripButton()
         Me.btnFilterByDate = New System.Windows.Forms.Button()
-        Me.FirstNameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PhoneToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DateJoinedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KarateMembersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KarateDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,15 +59,13 @@ Partial Class Form1
         '
         'DataGridView1
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.PhoneDataGridViewTextBoxColumn, Me.DateJoinedDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.KarateMembersBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(12, 83)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(545, 350)
         Me.DataGridView1.TabIndex = 1
         '
@@ -76,35 +74,30 @@ Partial Class Form1
         Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
         Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
         Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
-        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
         '
         'LastNameDataGridViewTextBoxColumn
         '
         Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "Last_Name"
         Me.LastNameDataGridViewTextBoxColumn.HeaderText = "Last_Name"
         Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
-        Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FirstNameDataGridViewTextBoxColumn
         '
         Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "First_Name"
         Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "First_Name"
         Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
-        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
         '
         'PhoneDataGridViewTextBoxColumn
         '
         Me.PhoneDataGridViewTextBoxColumn.DataPropertyName = "Phone"
         Me.PhoneDataGridViewTextBoxColumn.HeaderText = "Phone"
         Me.PhoneDataGridViewTextBoxColumn.Name = "PhoneDataGridViewTextBoxColumn"
-        Me.PhoneDataGridViewTextBoxColumn.ReadOnly = True
         '
         'DateJoinedDataGridViewTextBoxColumn
         '
         Me.DateJoinedDataGridViewTextBoxColumn.DataPropertyName = "Date_Joined"
         Me.DateJoinedDataGridViewTextBoxColumn.HeaderText = "Date_Joined"
         Me.DateJoinedDataGridViewTextBoxColumn.Name = "DateJoinedDataGridViewTextBoxColumn"
-        Me.DateJoinedDataGridViewTextBoxColumn.ReadOnly = True
         '
         'KarateMembersBindingSource
         '
@@ -149,7 +142,7 @@ Partial Class Form1
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem4, Me.FindMemberByNameToolStripMenuItem, Me.ToolStripMenuItem5, Me.ToolStripMenuItem6, Me.ToolStripMenuItem7})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem4, Me.FindMemberByNameToolStripMenuItem, Me.ToolStripMenuItem5, Me.UpdateDatabaseToolStripMenuItem6, Me.ToolStripMenuItem7})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "&File"
@@ -172,12 +165,32 @@ Partial Class Form1
         Me.ToolStripMenuItem5.Size = New System.Drawing.Size(196, 22)
         Me.ToolStripMenuItem5.Text = "&Find Member by Date"
         '
-        'ToolStripMenuItem6
+        'UpdateDatabaseToolStripMenuItem6
         '
-        Me.ToolStripMenuItem6.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FirstNameToolStripMenuItem})
-        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(196, 22)
-        Me.ToolStripMenuItem6.Text = "&Update Database"
+        Me.UpdateDatabaseToolStripMenuItem6.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FirstNameToolStripMenuItem})
+        Me.UpdateDatabaseToolStripMenuItem6.Name = "UpdateDatabaseToolStripMenuItem6"
+        Me.UpdateDatabaseToolStripMenuItem6.Size = New System.Drawing.Size(196, 22)
+        Me.UpdateDatabaseToolStripMenuItem6.Text = "&Update Database"
+        '
+        'FirstNameToolStripMenuItem
+        '
+        Me.FirstNameToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PhoneToolStripMenuItem})
+        Me.FirstNameToolStripMenuItem.Name = "FirstNameToolStripMenuItem"
+        Me.FirstNameToolStripMenuItem.Size = New System.Drawing.Size(133, 22)
+        Me.FirstNameToolStripMenuItem.Text = "First_Name"
+        '
+        'PhoneToolStripMenuItem
+        '
+        Me.PhoneToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateJoinedToolStripMenuItem})
+        Me.PhoneToolStripMenuItem.Name = "PhoneToolStripMenuItem"
+        Me.PhoneToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
+        Me.PhoneToolStripMenuItem.Text = "Phone"
+        '
+        'DateJoinedToolStripMenuItem
+        '
+        Me.DateJoinedToolStripMenuItem.Name = "DateJoinedToolStripMenuItem"
+        Me.DateJoinedToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
+        Me.DateJoinedToolStripMenuItem.Text = "Date_Joined"
         '
         'ToolStripMenuItem7
         '
@@ -222,26 +235,6 @@ Partial Class Form1
         Me.btnFilterByDate.Text = "FilterByDate"
         Me.btnFilterByDate.UseVisualStyleBackColor = True
         '
-        'FirstNameToolStripMenuItem
-        '
-        Me.FirstNameToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PhoneToolStripMenuItem})
-        Me.FirstNameToolStripMenuItem.Name = "FirstNameToolStripMenuItem"
-        Me.FirstNameToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.FirstNameToolStripMenuItem.Text = "First_Name"
-        '
-        'PhoneToolStripMenuItem
-        '
-        Me.PhoneToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DateJoinedToolStripMenuItem})
-        Me.PhoneToolStripMenuItem.Name = "PhoneToolStripMenuItem"
-        Me.PhoneToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.PhoneToolStripMenuItem.Text = "Phone"
-        '
-        'DateJoinedToolStripMenuItem
-        '
-        Me.DateJoinedToolStripMenuItem.Name = "DateJoinedToolStripMenuItem"
-        Me.DateJoinedToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.DateJoinedToolStripMenuItem.Text = "Date_Joined"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -281,7 +274,7 @@ Partial Class Form1
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem6 As ToolStripMenuItem
+    Friend WithEvents UpdateDatabaseToolStripMenuItem6 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem7 As ToolStripMenuItem
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents btnFilterByDate As Button

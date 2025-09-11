@@ -22,6 +22,7 @@ Partial Class Add_Member
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -33,6 +34,11 @@ Partial Class Add_Member
         Me.Last_NameTextBox = New System.Windows.Forms.TextBox()
         Me.First_NameTextBox = New System.Windows.Forms.TextBox()
         Me.PhoneTextBox = New System.Windows.Forms.TextBox()
+        Me.MembersTableAdapter1 = New Alt_Karate_frm.karateDBDataSetTableAdapters.MembersTableAdapter()
+        Me.KarateDBDataSet1 = New Alt_Karate_frm.karateDBDataSet()
+        Me.KarateBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        CType(Me.KarateDBDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.KarateBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -126,6 +132,20 @@ Partial Class Add_Member
         Me.PhoneTextBox.Size = New System.Drawing.Size(200, 20)
         Me.PhoneTextBox.TabIndex = 20
         '
+        'MembersTableAdapter1
+        '
+        Me.MembersTableAdapter1.ClearBeforeFill = True
+        '
+        'KarateDBDataSet1
+        '
+        Me.KarateDBDataSet1.DataSetName = "karateDBDataSet"
+        Me.KarateDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'KarateBindingSource
+        '
+        Me.KarateBindingSource.DataSource = Me.KarateDBDataSet1
+        Me.KarateBindingSource.Position = 0
+        '
         'Add_Member
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -144,6 +164,8 @@ Partial Class Add_Member
         Me.Controls.Add(Me.Label1)
         Me.Name = "Add_Member"
         Me.Text = "Add Member"
+        CType(Me.KarateDBDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.KarateBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -160,4 +182,7 @@ Partial Class Add_Member
     Friend WithEvents Last_NameTextBox As TextBox
     Friend WithEvents First_NameTextBox As TextBox
     Friend WithEvents PhoneTextBox As TextBox
+    Friend WithEvents MembersTableAdapter1 As karateDBDataSetTableAdapters.MembersTableAdapter
+    Friend WithEvents KarateDBDataSet1 As karateDBDataSet
+    Friend WithEvents KarateBindingSource As BindingSource
 End Class

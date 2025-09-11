@@ -27,4 +27,13 @@
     Private Sub ToolStripMenuItem7_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem7.Click
         Close()
     End Sub
+
+    Private Sub UpdateDatabaseToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles UpdateDatabaseToolStripMenuItem6.Click
+        Try
+            MembersTableAdapter.Update(KarateDBDataSet.Members)
+            MembersTableAdapter.Fill(KarateDBDataSet.Members)
+        Catch ex As Exception
+            MessageBox.Show(Me, "Error:" & ex.Message, "Save", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+    End Sub
 End Class
