@@ -3,7 +3,8 @@
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         Try
             KarateBindingSource.EndEdit()
-            MembersTableAdapter1.Update(karateDBDataSet.Members)
+            MembersTableAdapter1.Update(KarateDBDataSet1.Members)
+            Close()
         Catch ex As Exception
 
         End Try
@@ -13,5 +14,9 @@
         KarateBindingSource.AddNew()
         id = MembersTableAdapter1.GetNewMemberID()
         IDTextBox.Text = id.ToString()
+    End Sub
+
+    Private Sub formAddMembers(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        KarateBindingSource.CancelEdit()
     End Sub
 End Class

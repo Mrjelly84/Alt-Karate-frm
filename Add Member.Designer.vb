@@ -97,6 +97,7 @@ Partial Class Add_Member
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KarateDBDataSet1, "Members.Date_Joined", True))
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePicker1.Location = New System.Drawing.Point(125, 141)
         Me.DateTimePicker1.Name = "DateTimePicker1"
@@ -105,6 +106,7 @@ Partial Class Add_Member
         '
         'IDTextBox
         '
+        Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KarateDBDataSet1, "Members.ID", True))
         Me.IDTextBox.Location = New System.Drawing.Point(108, 26)
         Me.IDTextBox.Name = "IDTextBox"
         Me.IDTextBox.ReadOnly = True
@@ -113,6 +115,7 @@ Partial Class Add_Member
         '
         'Last_NameTextBox
         '
+        Me.Last_NameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KarateDBDataSet1, "Members.Last_Name", True))
         Me.Last_NameTextBox.Location = New System.Drawing.Point(107, 52)
         Me.Last_NameTextBox.Name = "Last_NameTextBox"
         Me.Last_NameTextBox.Size = New System.Drawing.Size(200, 20)
@@ -120,6 +123,7 @@ Partial Class Add_Member
         '
         'First_NameTextBox
         '
+        Me.First_NameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KarateDBDataSet1, "Members.First_Name", True))
         Me.First_NameTextBox.Location = New System.Drawing.Point(107, 78)
         Me.First_NameTextBox.Name = "First_NameTextBox"
         Me.First_NameTextBox.Size = New System.Drawing.Size(200, 20)
@@ -127,6 +131,7 @@ Partial Class Add_Member
         '
         'PhoneTextBox
         '
+        Me.PhoneTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KarateDBDataSet1, "Members.Phone", True))
         Me.PhoneTextBox.Location = New System.Drawing.Point(107, 104)
         Me.PhoneTextBox.Name = "PhoneTextBox"
         Me.PhoneTextBox.Size = New System.Drawing.Size(200, 20)
